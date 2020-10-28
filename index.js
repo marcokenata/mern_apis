@@ -27,8 +27,6 @@ app.use((req, res, next) => {
 
 app.use(body_parser.json());
 
-app.use('/.netlify/functions/server', routes);
-
 app.use('/api', routes);
 
 app.use((err, req, res, next) => {
@@ -39,3 +37,6 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
+module.exports = app;
+module.exports.handler = serverless(app);
