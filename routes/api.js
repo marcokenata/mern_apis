@@ -8,7 +8,7 @@ router.get('/todos', (req, res, next) => {
     Todo.find({}, 'action')
         .then(data => res.json(data))
         .catch(next)
-    mongoose.disconnect();
+    // mongoose.disconnect();
 });
 
 router.post('/todos', (req, res, next) => {
@@ -16,12 +16,12 @@ router.post('/todos', (req, res, next) => {
         Todo.create(req.body)
             .then(data => res.json(data))
             .catch(next)
-        mongoose.disconnect();
+        // mongoose.disconnect();
     } else {
         res.json({
             error: "The input field is empty"
         })
-        mongoose.disconnect();
+        // mongoose.disconnect();
     }
 });
 
@@ -31,7 +31,7 @@ router.delete('/todos/:id', (req, res, next) => {
         })
         .then(data => res.json(data))
         .catch(next)
-        mongoose.disconnect();
+        // mongoose.disconnect();
 })
 
 module.exports = router;
