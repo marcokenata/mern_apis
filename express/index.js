@@ -1,7 +1,7 @@
 const express = require('express');
 const body_parser = require('body-parser');
 const mongoose = require('mongoose');
-const routes = require('./routes/api');
+const routes = require('../routes/api');
 const serverless = require('serverless-http');
 const path = require('path');
 require('dotenv').config();
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 app.use(body_parser.json());
 
-app.use('/api', routes);
+app.use('/.netlify/functions/server', routes);
 
 app.use((err, req, res, next) => {
     console.log(err);
