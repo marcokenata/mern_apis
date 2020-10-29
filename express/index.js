@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 app.use(body_parser.json());
 
-app.use('/.netlify/functions/server', routes);
+app.use('/.netlify/functions/index', routes);
 
 app.use((err, req, res, next) => {
     console.log(err);
