@@ -40,3 +40,12 @@ app.listen(port, () => {
 
 module.exports = app;
 module.exports.handler = serverless(app);
+
+class index {
+
+    constructor(){}
+
+    close() {
+        mongoose.disconnect()
+    }
+}

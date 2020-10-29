@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 const Todo = require('../models/todo');
 
 router.get('/todos', (req, res, next) => {
@@ -7,6 +8,7 @@ router.get('/todos', (req, res, next) => {
     Todo.find({}, 'action')
         .then(data => res.json(data))
         .catch(next)
+    mongoose.disconnect();
 });
 
 router.post('/todos', (req, res, next) => {
@@ -14,10 +16,12 @@ router.post('/todos', (req, res, next) => {
         Todo.create(req.body)
             .then(data => res.json(data))
             .catch(next)
+        mongoose.disconnect();
     } else {
         res.json({
             error: "The input field is empty"
         })
+        mongoose.disconnect();
     }
 });
 
@@ -27,6 +31,7 @@ router.delete('/todos/:id', (req, res, next) => {
         })
         .then(data => res.json(data))
         .catch(next)
+        mongoose.disconnect();
 })
 
 module.exports = router;
