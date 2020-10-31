@@ -1,1 +1,1 @@
-web: npm build --prefix client && npm start prefix --client
+web: cd client && npm run build && npm run start
