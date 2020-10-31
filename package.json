@@ -4,7 +4,7 @@
   "description": "cuma nyobain",
   "main": "functions/index.js",
   "scripts": {
-    "build": "netlify-lambda build express",
+    "build": "netlify-lambda build express && npm install --prefix client",
     "start-watch": "nodemon express/index.js",
     "start": "node express/index.js",
     "client": "npm start --prefix client"
