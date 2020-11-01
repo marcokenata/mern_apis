@@ -9,7 +9,7 @@
     "start": "node express/index.js",
     "client": "npm start --prefix client"
   },
-  "engines":{
+  "engines": {
     "node": "10.16.0"
   },
   "author": "",
