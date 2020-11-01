@@ -12,7 +12,7 @@ class Input extends Component {
     const task = {action: this.state.action}
 
     if(task.action && task.action.length > 0){
-      axios.post('http://marcokenata-mern.netlify.app/.netlify/functions/index/todos', task)
+      axios.post('https://marcokenata-mern.netlify.app/.netlify/functions/index/todos', task)
         .then(res => {
           if(res.data){
             this.props.getTodos();

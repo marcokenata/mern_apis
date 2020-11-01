@@ -15,7 +15,7 @@ class Todo extends Component {
   }
 
   getTodos = () => {
-    axios.get('http://marcokenata-mern.netlify.app/.netlify/functions/index/todos')
+    axios.get('https://marcokenata-mern.netlify.app/.netlify/functions/index/todos')
       .then(res => {
         if(res.data){
           this.setState({
@@ -28,7 +28,7 @@ class Todo extends Component {
 
   deleteTodo = (id) => {
 
-    axios.delete(`http://marcokenata-mern.netlify.app/.netlify/functions/index/todos/${id}`)
+    axios.delete(`https://marcokenata-mern.netlify.app/.netlify/functions/index/todos/${id}`)
       .then(res => {
         if(res.data){
           this.getTodos()
