@@ -28,7 +28,7 @@ class Todo extends Component {
 
   deleteTodo = (id) => {
 
-    axios.delete(`https://marcokenata-mern.netlify.app/.netlify/functions/index/todos/${id}`)
+    axios.post(`https://marcokenata-mern.netlify.app/.netlify/functions/index/todos/delete/${id}`)
       .then(res => {
         if(res.data){
           this.getTodos()
